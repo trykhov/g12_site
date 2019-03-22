@@ -1,0 +1,24 @@
+
+
+#about-section {
+  background-color: #8f1537;
+  color: #fff;
+  font-family: 'Kanit', sans-serif;
+  overflow: auto;
+  padding: 20px 0;
+}
+
+.about-description {
+  width: 80%;
+  overflow: auto;
+  margin: 0 auto;
+}
+
+.about-us, .quote, #author {
+  width: 80%;
+  margin: 20px auto;
+}
+
+#author span {
+  float: right;
+}

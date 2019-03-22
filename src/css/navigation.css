@@ -3,9 +3,12 @@
   padding: 0;
 }
 
+
 .nav-bar {
   width: 100%;
   background-color: #10316b;
+  position: fixed;
+  z-index: 1;
 }
 
 .nav-container {

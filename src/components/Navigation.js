@@ -45,10 +45,10 @@ class Navigation extends React.Component {
 
   render() {
     return(
-      <div className="nav-bar">
+      <nav className="nav-bar">
         <div className="nav-container">
           <div className="logo-container">
-            Logo
+            G12 Logo
           </div>
           {/* the hamburger will disappear unless the screen is strunk*/}
           <div onClick={this.clickHamburgerIcon} className="icon-container">
@@ -61,7 +61,7 @@ class Navigation extends React.Component {
         <div className="drop-menu">
           {this.dropMenu()}
         </div>
-      </div>
+      </nav>
     );
   }
 }
