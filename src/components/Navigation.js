@@ -1,24 +1,42 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import navigation from '../css/navigation.css';
 
 class Navigation extends React.Component {
   state = {
-    english: [{tab: "Home"}, {tab: "About"}, {tab: "Service"}, {tab: "Contact Us"}],
-    spanish: [{tab: "sHome"}, {tab: "sAbout"}, {tab: "sService"}, {tab: "sApply"}, {tab: "sContact"}],
+    english: [
+      {tab: "Home", htmlPiece: <NavLink className="tab-link" to="/">Home</NavLink>},
+      {tab: "About", htmlPiece: null},
+      {tab: "Service", htmlPiece: <NavLink className="tab-link" to="/service">Service</NavLink>},
+      {tab: "Contact Us", htmlPiece: null}
+    ],
+    spanish: [
+      {tab: "sHome", htmlPiece: <NavLink className="tab-link" to="/">sHome</NavLink>},
+      {tab: "sAbout", htmlPiece: null},
+      {tab: "sService", htmlPiece: <NavLink className="tab-link" to="/service">Service</NavLink>},
+      {tab: "sContact Us", htmlPiece: null}
+    ],
     clickMenu: true, // this will switch back and forth when clicked on hamburger icon in mobile
     menuIcon: <i className="fas fa-bars fa-2x"></i>
   };
-
 
   // this function makes the tabs of the navigation
   makeTabs(language = "english") {
     if (language == "spanish") {
       return this.state.spanish.map(tabName => {
-        return <div className="tab" key={tabName.tab}> {tabName.tab} </div>
+        return (
+          <div className="tab" key={tabName.tab}>
+            {tabName.htmlPiece !== null ? tabName.htmlPiece : tabName.tab}
+          </div>
+        )
       });
     } else {
       return this.state.english.map(tabName => {
-        return <div className="tab" key={tabName.tab}> {tabName.tab} </div>
+        return (
+          <div className="tab" key={tabName.tab}>
+            {tabName.htmlPiece !== null ? tabName.htmlPiece : tabName.tab}
+          </div>
+        )
       });
     };
   };
@@ -36,7 +54,11 @@ class Navigation extends React.Component {
     if(this.state.clickMenu === !true) {
       return(
         this.state.english.map((tabName) => {
-          return <div className="dropTab" key={tabName.tab}> {tabName.tab} </div>
+          return (
+            <div className="dropTab" key={tabName.tab}>
+              {tabName.htmlPiece !== null ? tabName.htmlPiece : tabName.tab}
+            </div>
+          )
         })
       );
     }}

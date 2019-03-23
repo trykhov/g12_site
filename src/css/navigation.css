@@ -39,6 +39,11 @@
   margin-right: 30px;
 }
 
+.tab-link {
+  text-decoration: none;
+  color: #fff
+}
+
 .icon-container {
   overflow: auto;
   position: absolute;
@@ -65,7 +70,7 @@
 
 /****************************** Tab Action ************************************/
 
-.tab:hover, .dropTab:hover {
+.tab-link:hover, .dropTab:hover, .tab:hover {
   color: green;
   cursor: pointer;
 }
