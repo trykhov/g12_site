@@ -9,15 +9,20 @@ class Intro extends React.Component {
   render() {
     return(
       <section style={{height: "100%"}}>
+        <div style={{height: "78px"}}></div>
         <div className="background-image">
-          <div className="message-border">
-            <span className="message">
-
-            </span>
+          <div className="options-container">
+            <div className="truck-owner box">
+              <h2>Are You a Business?</h2>
+              <p>
+                G12 Transport  works locally to transport loads throughout the state of California.
+                If you are a company looking to have your merchandise transported, click here:
+              </p>
+              <div className="apply-button">
+                <button> Request Service </button>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="testing">
-
         </div>
       </section>
     );

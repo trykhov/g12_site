@@ -11,15 +11,98 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  height: 100%;
-  /* width: 100%; */
+  min-height: 100%;
+  display: flex;
 }
 
 
-
-/* .message-border {
-  width: 100px;
-  height: 100px;
-  background-color: black;
+.options-container {
+  width: 80%;
+  margin: 0 auto;
+  overflow: auto;
   color: #fff;
-} */
+  display: flex;
+  align-items: center;
+}
+
+
+.box {
+  width: 40%;
+  background-color: #62374e;
+  border-radius: 16px;
+  padding: 30px;
+  margin: 10px;
+  font-size: 1.5vw;
+  font-family: 'Kanit', sans-serif;
+  line-height: 2.5em;
+}
+
+.apply-button {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  font-size: 1.5vw;
+  width: 50%;
+  padding: 5%;
+  border-radius: 80px;
+  margin-top: 20px;
+  color: #fff;
+  background-color: #226089;
+  font-family: 'Kanit', sans-serif;
+  box-shadow: 5px 5px 8px #888888;
+  text-align: center;
+}
+
+.box h2, .box p {
+  margin: 10px;
+  text-align: center;
+}
+
+/****************************** Tab Action ************************************/
+
+button:active {
+  box-shadow: none;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #1f3c88;
+}
+
+/***************************** Media Query ************************************/
+
+/* tablet */
+@media (min-height: 1000px) {
+  .box {
+    height: 50%;
+    font-size: 2vh;
+    line-height: 2em;
+  }
+
+  button {
+    font-size: 1.5vh;
+    padding: 10px;
+  }
+
+}
+
+
+/* phones */
+@media (max-width: 900px) {
+  .box {
+    width: 300px;
+    height: 300px;
+    font-size: 15px;
+    margin: 0 auto;
+    line-height: 1.75rem;
+  }
+
+  button {
+    font-size: 2vw;
+    padding: 10px;
+  }
+
+
+}

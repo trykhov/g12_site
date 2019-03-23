@@ -73,7 +73,7 @@
 /***************************** Media Query ************************************/
 
 /* when screen is on a computer */
-@media (min-width: 850px) {
+@media (min-width: 900px) {
   .icon-container {
     display: none;
   }
@@ -84,7 +84,7 @@
 }
 
 /* when screen is on a phone */
-@media (max-width: 850px) {
+@media (max-width: 900px) {
   .tab-container {
     display: none;
   }

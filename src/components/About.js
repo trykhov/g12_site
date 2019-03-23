@@ -5,7 +5,7 @@ class About extends React.Component {
   render() {
     return(
       <section id="about-section">
-        <h1 className="about-us"> About Us </h1>
+        <h1 className="about-us"> Who We Are </h1>
         <div className="about-description">
           <span>
             G12 Transport is a family owned business located in Los Angeles, California.

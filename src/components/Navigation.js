@@ -3,7 +3,7 @@ import navigation from '../css/navigation.css';
 
 class Navigation extends React.Component {
   state = {
-    english: [{tab: "Home"}, {tab: "About"}, {tab: "Service"}, {tab: "Apply"}, {tab: "Contact"}],
+    english: [{tab: "Home"}, {tab: "About"}, {tab: "Service"}, {tab: "Contact Us"}],
     spanish: [{tab: "sHome"}, {tab: "sAbout"}, {tab: "sService"}, {tab: "sApply"}, {tab: "sContact"}],
     clickMenu: true, // this will switch back and forth when clicked on hamburger icon in mobile
     menuIcon: <i className="fas fa-bars fa-2x"></i>
