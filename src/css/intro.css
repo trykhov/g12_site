@@ -42,7 +42,7 @@
   justify-content: center;
 }
 
-button {
+.button {
   font-size: 1.5vw;
   width: 50%;
   padding: 5%;
@@ -53,6 +53,7 @@ button {
   font-family: 'Kanit', sans-serif;
   box-shadow: 5px 5px 8px #888888;
   text-align: center;
+  text-decoration: none;
 }
 
 .box h2, .box p {
@@ -62,11 +63,11 @@ button {
 
 /****************************** Tab Action ************************************/
 
-button:active {
+.button:active {
   box-shadow: none;
 }
 
-button:hover {
+.button:hover {
   cursor: pointer;
   background-color: #1f3c88;
 }

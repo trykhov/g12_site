@@ -1,6 +1,6 @@
 import React from 'react';
 import intro from '../css/intro.css';
-
+import { NavLink } from 'react-router-dom';
 class Intro extends React.Component {
 
 
@@ -18,7 +18,9 @@ class Intro extends React.Component {
                 If you are a company looking to have your merchandise transported, click here:
               </p>
               <div className="apply-button">
-                <button> Request Service </button>
+                < NavLink className="button" to="/service">
+                   Request Service
+                </NavLink>
               </div>
             </div>
           </div>
