@@ -9,7 +9,6 @@ class Intro extends React.Component {
   render() {
     return(
       <section style={{height: "100%", overflow: "auto"}}>
-        <div style={{height: "78px"}}></div>
         <div className="background-image">
           <div className="options-container">
             <div className="truck-owner box">
