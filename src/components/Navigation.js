@@ -1,20 +1,21 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import navigation from '../css/navigation.css';
+import ServicePage from './ServicePage';
 
 class Navigation extends React.Component {
   state = {
     english: [
       {tab: "Home", htmlPiece: <NavLink className="tab-link" to="/">Home</NavLink>},
-      {tab: "About", htmlPiece: null},
-      {tab: "Service", htmlPiece: <NavLink className="tab-link" to="/service">Service</NavLink>},
-      {tab: "Contact Us", htmlPiece: null}
+      {tab: "About", htmlPiece: <NavLink className="tab-link" to="/">About</NavLink>},
+      {tab: "Service", htmlPiece: <NavLink className="tab-link" to="/service">{ServicePage}Service</NavLink>},
+      {tab: "Contact Us", htmlPiece: <NavLink className="tab-link" to="/">Contact Us</NavLink>}
     ],
     spanish: [
       {tab: "sHome", htmlPiece: <NavLink className="tab-link" to="/">sHome</NavLink>},
-      {tab: "sAbout", htmlPiece: null},
+      {tab: "sAbout", htmlPiece: <NavLink className="tab-link" to="/">sAbout</NavLink>},
       {tab: "sService", htmlPiece: <NavLink className="tab-link" to="/service">Service</NavLink>},
-      {tab: "sContact Us", htmlPiece: null}
+      {tab: "sContact Us", htmlPiece: <NavLink className="tab-link" to="/">sContact Us</NavLink>}
     ],
     clickMenu: true, // this will switch back and forth when clicked on hamburger icon in mobile
     menuIcon: <i className="fas fa-bars fa-2x"></i>
