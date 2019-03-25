@@ -1,0 +1,16 @@
+#contact-us {
+  background-color: #8f1537;
+  color: #fff;
+  font-family: 'Kanit', sans-serif;
+}
+
+.enclosed-container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.contact-info {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+}

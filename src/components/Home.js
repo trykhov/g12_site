@@ -3,6 +3,7 @@ import Navigation from './Navigation';
 import Intro from './Intro';
 import About from './About';
 import Footer from './Footer';
+import Contact from './Contact';
 
 
 class Home extends React.Component {
@@ -13,6 +14,7 @@ class Home extends React.Component {
         <div style={{height: "78px"}}></div>
         <Intro />
         <About />
+        <Contact />
         <Footer />
       </div>
     )
