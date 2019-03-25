@@ -10,7 +10,7 @@ class Home extends React.Component {
     return (
       <div style={{ height: "100%" }}>
         <Navigation />
-        <div style={{ height: "78px" }} />
+        <div id=" " style={{ height: "78px" }} />
         <Intro />
         <About />
         <Contact />

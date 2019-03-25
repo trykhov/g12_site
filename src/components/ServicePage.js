@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import Navigation from "./Navigation";
+import style from "../css/servicepage.css";
 
 class ServicePage extends React.Component {
   state = {
@@ -15,7 +16,7 @@ class ServicePage extends React.Component {
 
   render() {
     return (
-      <div>
+      <section>
         <Navigation />
         <div style={{ height: "78px" }} />
         <div className="survey">
@@ -59,14 +60,11 @@ class ServicePage extends React.Component {
           </div>
           <div className="dry">
             <h3> Dry Van </h3>
-            <input
-              type="text"
-              value={this.state.dryVan}
-              onChange={e => this.setState({ dryVan: e.target.value })}
-            />
+            <input type="radio" name="choice" value="yes" checked /> Yes
+            <input type="radio" name="choice" value="no" /> No
           </div>
         </div>
-      </div>
+      </section>
     );
   }
 }

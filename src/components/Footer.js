@@ -3,7 +3,7 @@ import React from "react";
 class Footer extends React.Component {
   render() {
     return (
-      <footer style={{ width: "100%", backgroundColor: "#8f1537" }}>
+      <footer style={{ width: "100%", backgroundColor: "#10316b" }}>
         <div
           style={{
             width: "80%",

@@ -4,7 +4,7 @@ import about from "../css/about.css";
 class About extends React.Component {
   render() {
     return (
-      <section id="about-section">
+      <section id="about">
         <h1 className="about-us"> Who We Are </h1>
         <div className="about-description">
           <span>

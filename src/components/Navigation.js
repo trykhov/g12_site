@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavHashLink as NavLink } from 'react-router-hash-link';
 import navigation from "../css/navigation.css";
 import ServicePage from "./ServicePage";
 
@@ -9,7 +9,7 @@ class Navigation extends React.Component {
       {
         tab: "Home",
         htmlPiece: (
-          <NavLink className="tab-link" to="/">
+          <NavLink className="tab-link" to="/# ">
             Home
           </NavLink>
         )
@@ -17,7 +17,7 @@ class Navigation extends React.Component {
       {
         tab: "About",
         htmlPiece: (
-          <NavLink className="tab-link" to="/">
+          <NavLink className="tab-link" to="/#about">
             About
           </NavLink>
         )
@@ -33,8 +33,8 @@ class Navigation extends React.Component {
       {
         tab: "Contact Us",
         htmlPiece: (
-          <NavLink className="tab-link" to="/">
-            Contact Us
+          <NavLink className="tab-link" to="/#contact-us">
+              Contact Us
           </NavLink>
         )
       }
