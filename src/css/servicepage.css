@@ -38,3 +38,12 @@ form {
   background-color: green;
   color: #fff;
 }
+
+.metrics-box {
+  padding: 10px;
+}
+
+.price-icon {
+  float: left;
+  background-color: gray;
+}
