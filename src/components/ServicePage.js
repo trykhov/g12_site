@@ -19,6 +19,20 @@ class ServicePage extends React.Component {
 
   generateQuestions = requestInfo => {
     return requestInfo.map(question => {
+      if(question == "Email") {
+        return(
+          <div className="input-container">
+            <h2> {question} </h2>
+            <input
+              className="input-box"
+              type="text"
+              name={question}
+              pattern="^(.+)@(.+).com$"
+              title="Please enter a valid email"
+            />
+          </div>
+        )
+      }
       return (
         <div className="input-container">
           <h2> {question} </h2>
@@ -28,8 +42,8 @@ class ServicePage extends React.Component {
             name={question}
           />
         </div>
-      )
-    })
+      );
+    });
   };
 
   checkEmpty = stateList => {};
