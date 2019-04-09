@@ -3,12 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "googleapis": "^27.0.0",
     "history": "^4.9.0",
-    "react": "^16.8.4",
+    "nodemailer": "^6.0.0",
+    "react": "^16.8.6",
     "react-dom": "^16.8.4",
+    "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.0",
     "react-router-hash-link": "^1.2.1",
-    "react-scripts": "2.1.8"
+    "react-scripts": "2.1.8",
+    "redux": "^4.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

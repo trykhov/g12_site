@@ -39,6 +39,11 @@ form {
   color: #fff;
 }
 
+.submit-button:hover {
+  background-color: red;
+  cursor: pointer;
+}
+
 .metrics-box {
   padding: 10px;
 }

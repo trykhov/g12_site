@@ -3,6 +3,7 @@ import { NavHashLink as NavLink } from 'react-router-hash-link';
 import navigation from "../css/navigation.css";
 import ServicePage from "./ServicePage";
 
+
 class Navigation extends React.Component {
   state = {
     english: [
@@ -25,7 +26,7 @@ class Navigation extends React.Component {
       {
         tab: "Service",
         htmlPiece: (
-          <NavLink className="tab-link" to="/service">
+          <NavLink className="tab-link" to='/service'>
             Service
           </NavLink>
         )
