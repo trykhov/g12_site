@@ -54,12 +54,11 @@ class ServicePage extends React.Component {
   checkEmpty = stateList => {};
 
   render() {
-    // console.log(process.env.SENDGRID_API_KEY);
     return (
       <section style={{ backgroundColor: "#10316b", height: "100%" }}>
-        <div style={{ height: "78px" }} />
+      <div id=" " style={{ height: "78px" }} />
         <div className="survey">
-          <form>
+          <form action="/send_email" method="post">
             {this.generateQuestions(this.info)}
             <div className="input-container">
               <h2> Dry Van? </h2>
@@ -83,9 +82,7 @@ class ServicePage extends React.Component {
               <h2> Price </h2>
               $<input className="input-box" type="text" name="Price" />
             </div>
-            <div
-              className="submit-button"
-            >Submit</div>
+            <input type="submit" className="submit-button"/>
           </form>
         </div>
       </section>
