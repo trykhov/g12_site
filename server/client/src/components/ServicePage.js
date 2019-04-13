@@ -1,21 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import Navigation from "./Navigation";
 import style from "../css/servicepage.css";
 
 
 
-
 class ServicePage extends React.Component {
-
-  state = {
-      name: '',
-      email: '',
-      phoneNumber: '',
-      origin: '',
-      destination: '',
-      weight: '',
-    };
 
 
   labelQuestions = [
