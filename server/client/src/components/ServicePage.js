@@ -9,82 +9,77 @@ import style from "../css/servicepage.css";
 class ServicePage extends React.Component {
 
   state = {
-      from: 'trikhov@gmail.com', // sender address
-      to: "tryc_khov@yahoo.com", // list of receivers
-      subject: 'Test Hello World', // Subject line
-      text: 'Hey just testing to see if this thing works!', // plaintext body
+      name: '',
+      email: '',
+      phoneNumber: '',
+      origin: '',
+      destination: '',
+      weight: '',
     };
 
-  info = [
-    { name: "name", header: "Name" },
-    { name: "email", header: "Email" },
-    { name: "phone_number", header: "Phone Number" },
-    { name: "origin", header: "Origin" },
-    { name: "destination", header: "Destination" },
-    { name: "weight", header: "Weight" }
+
+  labelQuestions = [
+    {info: "Your Name", name: "name"},
+    {info: "Email", name: "email"},
+    {info: "Phone Number", name: "phone"},
+    {info: "Pick Up From", name: "pick"},
+    {info: "Drop Off To", name: "drop"},
+    {info: "Weight", name: "weight"},
+    {info: "Dry Van", name: "van"},
+    {info: "Price", name: "price"}
   ];
 
-  generateQuestions = requestInfo => {
-    return requestInfo.map(question => {
-      if (question.header == "Email") {
-        return (
-          <div className="input-container" key={question.header}>
-            <h2> {question.header} </h2>
-            <input
-              className="input-box"
-              type="text"
-              name={question.name}
-              pattern="^(.+)@(.+).com$"
-              title="Please enter a valid email"
-              value={this.state.from}
-              onChange={e => this.setState({ from: e.target.value })}
-            />
-          </div>
-        );
+  // uses labelQuestions to put forms labels on left side
+  label = formLabels => {
+    return formLabels.map(question => {
+      if(question.info == "Dry Van") {
+      return(
+        <tr key={question.info}>
+          <td>
+            <strong className="label"> {question.info} </strong>
+          </td>
+          <td>
+            <select className="dry-van" name={question.name}>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </td>
+        </tr>
+      )
+      } else {
+        return(
+            <tr key={question.info}>
+              <td>
+                <strong className="label"> {question.info} </strong>
+              </td>
+              <td>
+                <input className="input-box" type="text" name={question.name}/>
+              </td>
+            </tr>
+        )
       }
-      return (
-        <div className="input-container" key={question.header}>
-          <h2> {question.header} </h2>
-          <input className="input-box" type="text" name={question.name} />
-        </div>
-      );
     });
   };
 
-  checkEmpty = stateList => {};
+
 
   render() {
     return (
       <section style={{ backgroundColor: "#10316b", height: "100%" }}>
       <div id=" " style={{ height: "78px" }} />
-        <div className="survey">
-          <form action="/send_email" method="post">
-            {this.generateQuestions(this.info)}
-            <div className="input-container">
-              <h2> Dry Van? </h2>
-              <input
-                className="dry-van-yes"
-                type="radio"
-                name="dryVan"
-                value="Yes"
-                defaultChecked
-              />
-              Yes
-              <input
-                className="dry-van-no"
-                type="radio"
-                name="dryVan"
-                value="No"
-              />
-              No
-            </div>
-            <div className="input-container">
-              <h2> Price </h2>
-              $<input className="input-box" type="text" name="Price" />
-            </div>
-            <input type="submit" className="submit-button"/>
-          </form>
-        </div>
+      <form action="/send_email" method="post">
+        <table>
+        <p> Info about form </p>
+          <tbody>
+            {this.label(this.labelQuestions)}
+            <tr>
+              <td>
+                <input type="submit"/>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
       </section>
     );
   }
