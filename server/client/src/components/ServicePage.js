@@ -57,12 +57,12 @@ class ServicePage extends React.Component {
       <div id=" " style={{ height: "78px" }} />
       <form action="/send_email" method="post">
         <table>
-        <p> Info about form </p>
           <tbody>
+            <label> Info about this form </label>
             {this.label(this.labelQuestions)}
             <tr>
               <td>
-                <input type="submit"/>
+                <input type="submit" value="Review Info"/>
               </td>
             </tr>
           </tbody>

@@ -102,9 +102,9 @@ class Navigation extends React.Component {
   clickHamburgerIcon = () => {
     this.setState({ clickMenu: !this.state.clickMenu });
     if (this.state.clickMenu === true) {
-      this.setState({ menuIcon: <i className="fas fa-times fa-2x" /> });
+      this.setState({ menuIcon: <i className="fas fa-times fa-2x" />});
     } else {
-      this.setState({ menuIcon: <i className="fas fa-bars fa-2x" /> });
+      this.setState({ menuIcon: <i className="fas fa-bars fa-2x" />});
     }
   };
 
@@ -112,7 +112,7 @@ class Navigation extends React.Component {
     if (this.state.clickMenu === !true) {
       return this.state.english.map(tabName => {
         return (
-          <div className="dropTab" key={tabName.tab}>
+          <div className="dropTab" key={tabName.tab} onClick={this.clickHamburgerIcon}>
             {tabName.htmlPiece !== null ? tabName.htmlPiece : tabName.tab}
           </div>
         );

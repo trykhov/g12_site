@@ -12,10 +12,11 @@ class App extends React.Component {
 
   render() {
     return (
-      <BrowserRouter style={{ height: "100%" }}>
+      <BrowserRouter>
         <Navigation />
+        <div id=" " style={{ height: "78px" }} />
         <Route path="/" component={Home} exact />
-        <Route path="/service" render={() => <ServicePage />} />
+        <Route path="/service" render={() => <ServicePage />}/>
       </BrowserRouter>
     );
   }
