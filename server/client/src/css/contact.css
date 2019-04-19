@@ -4,15 +4,21 @@
   font-family: 'Kanit', sans-serif;
 }
 
+h2 {
+  width: 80%;
+  margin: 0 auto;
+}
+
 .enclosed-container {
   width: 80%;
   margin: 0 auto;
   overflow: auto;
-}
-
-.contact-info {
-  padding: 0 0 10px 0;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+
+table {
+  padding: 0;
 }
