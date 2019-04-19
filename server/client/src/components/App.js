@@ -14,7 +14,6 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Navigation />
-        <div id=" " style={{ height: "78px" }} />
         <Route path="/" component={Home} exact />
         <Route path="/service" render={() => <ServicePage />}/>
       </BrowserRouter>

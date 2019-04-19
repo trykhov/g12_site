@@ -2,10 +2,13 @@ import React from "react";
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import navigation from "../css/navigation.css";
 import ServicePage from "./ServicePage";
+import { connect } from 'react-redux';
+import { translateEnglish, translateSpanish } from '../actions';
 
 
 class Navigation extends React.Component {
   state = {
+    defaultLanguage: "english",
     english: [
       {
         tab: "Home",
@@ -27,7 +30,7 @@ class Navigation extends React.Component {
         tab: "Service",
         htmlPiece: (
           <NavLink className="tab-link" to='/service'>
-            Service
+            Request Service
           </NavLink>
         )
       },
@@ -38,6 +41,10 @@ class Navigation extends React.Component {
               Contact Us
           </NavLink>
         )
+      },
+      {
+        tab: "Español",
+        htmlPiece: (<div onClick={this.props.translateSpanish}> Español </div>)
       }
     ],
     spanish: [
@@ -45,7 +52,7 @@ class Navigation extends React.Component {
         tab: "sHome",
         htmlPiece: (
           <NavLink className="tab-link" to="/">
-            sHome
+            Página de inicio
           </NavLink>
         )
       },
@@ -53,7 +60,7 @@ class Navigation extends React.Component {
         tab: "sAbout",
         htmlPiece: (
           <NavLink className="tab-link" to="/">
-            sAbout
+            Sobre G12 Transport
           </NavLink>
         )
       },
@@ -61,7 +68,7 @@ class Navigation extends React.Component {
         tab: "sService",
         htmlPiece: (
           <NavLink className="tab-link" to="/service">
-            Service
+            Solicitar Servicios
           </NavLink>
         )
       },
@@ -69,9 +76,13 @@ class Navigation extends React.Component {
         tab: "sContact Us",
         htmlPiece: (
           <NavLink className="tab-link" to="/">
-            sContact Us
+            Contáctenos
           </NavLink>
         )
+      },
+      {
+        tab: "English",
+        htmlPiece:(<div onClick={this.props.translateEnglish}>English</div>)
       }
     ],
     clickMenu: true, // this will switch back and forth when clicked on hamburger icon in mobile
@@ -79,7 +90,7 @@ class Navigation extends React.Component {
   };
 
   // this function makes the tabs of the navigation
-  makeTabs(language = "english") {
+  makeTabs(language) {
     if (language == "spanish") {
       return this.state.spanish.map(tabName => {
         return (
@@ -120,21 +131,27 @@ class Navigation extends React.Component {
     }
   };
 
+
   render() {
     return (
-      <nav className="nav-bar">
-        <div className="nav-container">
-          <div className="logo-container">G12 Logo</div>
-          {/* the hamburger will disappear unless the screen is strunk*/}
-          <div onClick={this.clickHamburgerIcon} className="icon-container">
-            {this.state.menuIcon}
+        <nav className="nav-bar">
+          <div className="nav-container">
+            <div className="logo-container">G12 Logo</div>
+            {/* the hamburger will disappear unless the screen is strunk*/}
+            <div onClick={this.clickHamburgerIcon} className="icon-container">
+              {this.state.menuIcon}
+            </div>
+            <div className="tab-container">{this.makeTabs(this.props.currLang)}</div>
           </div>
-          <div className="tab-container">{this.makeTabs()}</div>
-        </div>
-        <div className="drop-menu">{this.dropMenu()}</div>
-      </nav>
+          <div className="drop-menu">{this.dropMenu()}</div>
+        </nav>
     );
   }
 }
 
-export default Navigation;
+// state is the initial state from the reducers
+const mapStateToProps = state => {
+  return {currLang: state.translate};
+}
+
+export default connect(mapStateToProps, { translateEnglish, translateSpanish })(Navigation);

@@ -22,7 +22,7 @@
 .logo-container {
   float: left;
   font-family: 'Kanit', sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   padding: 20px;
 }
 
@@ -35,7 +35,7 @@
 .tab {
   float: left;
   font-family: 'Kanit', sans-serif;
-  font-size: 25px;
+  font-size: 20px;
   margin-right: 30px;
 }
 
@@ -78,7 +78,7 @@
 /***************************** Media Query ************************************/
 
 /* when screen is on a computer */
-@media (min-width: 900px) {
+@media (min-width: 1250px) {
   .icon-container {
     display: none;
   }
@@ -89,7 +89,7 @@
 }
 
 /* when screen is on a phone */
-@media (max-width: 900px) {
+@media (max-width: 1250px) {
   .tab-container {
     display: none;
   }
