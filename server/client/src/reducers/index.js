@@ -9,7 +9,7 @@ const language = (state = initialLanguage, action) => { //always initialize a st
     case "TRANSLATE_SPANISH":
       return action.payload;
     default:
-      return initialLanguage.currLang;
+      return state.currLang;
   }
 };
 
