@@ -56,3 +56,16 @@ form {
   width: 80%;
   margin: 0 auto;
 }
+
+#review-button {
+  background-color: #fff;
+  display: inline-block;
+  text-align: center;
+  width: 50px;
+  padding: 5px;
+  border-radius: 16px;
+}
+
+#review-button:active {
+  background-color: red;
+}

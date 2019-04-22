@@ -1,4 +1,4 @@
-import React from 'react';
+
 
 export const translateEnglish = () => {
   return {type: "TRANSLATE_ENGLISH", payload: "english"};

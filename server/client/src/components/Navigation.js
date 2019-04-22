@@ -8,6 +8,7 @@ import { translateEnglish, translateSpanish} from '../actions';
 
 class Navigation extends React.Component {
 
+  // can have local states along with central states
   state = {
     en: {
       home: "Home",

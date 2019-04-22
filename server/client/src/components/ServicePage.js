@@ -77,20 +77,31 @@ class ServicePage extends React.Component {
   // uses labelQuestions to put forms labels on left side
   label = formLabels => {
     return formLabels.map(question => {
-      if(question.info == "Dry Van" || question.info == "Dryyyyy") {
-      return(
-        <tr key={question.info}>
-          <td>
-            <strong className="label"> {question.info} </strong>
-          </td>
-          <td>
-            <select className="dry-van" name={question.name}>
-              <option value="Yes">{question.info == "Dry Van" ? "Yes" : "Si"}</option>
-              <option value="No">No</option>
-            </select>
-          </td>
-        </tr>
-      )
+      if(question.name == "van") {
+        return(
+          <tr key={question.info}>
+            <td>
+              <strong className="label"> {question.info} </strong>
+            </td>
+            <td>
+              <select className="dry-van" name={question.name}>
+                <option value="Yes">{question.info == "Dry Van" ? "Yes" : "Sí"}</option>
+                <option value="No">No</option>
+              </select>
+            </td>
+          </tr>
+        )
+      } else if(question.name == "pick" || question.name == "drop") {
+        return (
+          <tr key={question.info}>
+            <td>
+              <strong className="label"> {question.info} </strong>
+            </td>
+            <td>
+              <input id={question.name} className="input-box" type="text" name={question.name} required/>
+            </td>
+          </tr>
+        )
       } else {
         return(
             <tr key={question.info}>
@@ -98,7 +109,7 @@ class ServicePage extends React.Component {
                 <strong className="label"> {question.info} </strong>
               </td>
               <td>
-                <input className="input-box" type="text" name={question.name}/>
+                <input className="input-box" type="text" name={question.name} required/>
               </td>
             </tr>
         )
@@ -112,19 +123,15 @@ class ServicePage extends React.Component {
     return (
       <section style={{ backgroundColor: "#10316b", height: "100%" }}>
       <div id=" " style={{ height: "78px" }} />
-      <form action="/send_email" method="post">
+      <form id="infoForm" action="/send_email" method="post">
         <p> {this.formatLanguage(this.props.currLang).main} </p>
         <p> {this.formatLanguage(this.props.currLang).disclaimer} </p>
         <table>
           <tbody>
             {this.label(this.formatInfo(this.props.currLang))}
-            <tr>
-              <td>
-                <input type="submit" value="Review Info"/>
-              </td>
-            </tr>
           </tbody>
         </table>
+        <div id="review-button">Review</div>
       </form>
       </section>
     );
