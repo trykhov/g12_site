@@ -19,13 +19,13 @@ class ServicePage extends React.Component {
   labels = {
     labelsEn: [
       {info: "Your Name", name: "name"},
-      {info: "Email", name: "email"},
+      {info: "Preferred Email", name: "email"},
       {info: "Phone Number", name: "phone"},
       {info: "Pick Up From", name: "pick"},
       {info: "Drop Off To", name: "drop"},
-      {info: "Weight", name: "weight"},
-      {info: "Dry Van", name: "van"},
-      {info: "Price", name: "price"}
+      {info: "Weight of Cargo (lb)", name: "weight"},
+      {info: "Are there any fluids?", name: "van"},
+      {info: "Cost of Assets (USD$)", name: "price"}
     ],
     labelsSp: [
       {info: "Nombre", name: "name"},
@@ -33,7 +33,7 @@ class ServicePage extends React.Component {
       {info: "Telefono", name: "phone"},
       {info: "Pick", name: "pick"},
       {info: "Drop", name: "drop"},
-      {info: "Weightzzzz", name: "weight"},
+      {info: "Weightzzzz (lb)", name: "weight"},
       {info: "Dryyyyy", name: "van"},
       {info: "Priceeee", name: "price"}
     ]
@@ -75,7 +75,7 @@ class ServicePage extends React.Component {
             </td>
             <td>
               <select className="dry-van" name={question.name}>
-                <option value="Yes">{question.info == "Dry Van" ? "Yes" : "Sí"}</option>
+                <option value="Yes">{question.info == "Are there any fluids?" ? "Yes" : "Sí"}</option>
                 <option value="No">No</option>
               </select>
             </td>
@@ -92,6 +92,17 @@ class ServicePage extends React.Component {
             </td>
           </tr>
         )
+      } else if(question.name == "email") {
+        return (
+          <tr key={question.info}>
+            <td>
+              <strong className="label"> {question.info} </strong>
+            </td>
+            <td>
+              <input id="email" className="input-box" type="text" name={question.name} placeholder="e.g: bobsmith@website.com" pattern="^(.+)@(.+).com$" required/>
+            </td>
+          </tr>
+        )
       } else {
         return(
             <tr key={question.info}>
@@ -99,7 +110,7 @@ class ServicePage extends React.Component {
                 <strong className="label"> {question.info} </strong>
               </td>
               <td>
-                <input className="input-box" type="text" name={question.name} required/>
+                <input id={question.name} className="input-box" type="text" name={question.name} required/>
               </td>
             </tr>
         )

@@ -12,10 +12,10 @@ window.onload = function() { // waits for react to load up first before running 
     }
   }
 
+
   // when user clicks on Review button, it should have the input in diff. color for them to review
   // then it should prevent them from entering values in this state
   $('#review-button').click(function(e) {
-    console.log($('input').attr('disabled'))
     if($('input').attr('disabled')) { // active when user presses edit
       $('input').removeAttr('disabled'); // removes disable to allow edits
       $('input[type=text]').css('border', "2px solid black");
@@ -36,5 +36,25 @@ window.onload = function() { // waits for react to load up first before running 
       }
     })
   })
+
+  $('#review-button').click(function() {
+    let pattern=/^(.+)@(.+).com$/;
+    let weight = $.isNumeric($("#weight").val());
+    if($("#email").val().match(pattern) == null) { // checks if email format is valid
+      $("#warning").append("<p id='valid-email' style='color: red'>* Please provide a valid email.</p>");
+    } else {
+      $('#valid-email').remove();
+    }
+    if(!weight || $("#weight").val() < 0) { // enter valid values for the weight
+      $("#warning").append("<p id='valid-weight' style='color: red'>* Please give us the weight of the assets.</p>");
+      $("#weight").css('border', "2px solid red");
+    } else {
+      $('#valid-weight').remove();
+    }
+  })
+
+  // check inputs
+
+
 
 }
