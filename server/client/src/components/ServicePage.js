@@ -1,7 +1,7 @@
 import React from "react";
+import ReactDOM from 'react-dom';
 import style from "../css/servicepage.css";
 import { connect } from 'react-redux';
-
 
 class ServicePage extends React.Component {
 
@@ -55,16 +55,6 @@ class ServicePage extends React.Component {
     }
   }
 
-  // labelQuestions = [
-  //   {info: "Your Name", name: "name"},
-  //   {info: "Email", name: "email"},
-  //   {info: "Phone Number", name: "phone"},
-  //   {info: "Pick Up From", name: "pick"},
-  //   {info: "Drop Off To", name: "drop"},
-  //   {info: "Weight", name: "weight"},
-  //   {info: "Dry Van", name: "van"},
-  //   {info: "Price", name: "price"}
-  // ];
 
   formatLanguage(language) {
     if(language == "english") {
@@ -125,7 +115,8 @@ class ServicePage extends React.Component {
       <div id=" " style={{ height: "78px" }} />
       <form id="infoForm" action="/send_email" method="post">
         <p> {this.formatLanguage(this.props.currLang).main} </p>
-        <p> {this.formatLanguage(this.props.currLang).disclaimer} </p>
+        <p style={{color: "red"}}> {this.formatLanguage(this.props.currLang).disclaimer} </p>
+        <p id="warning" style={{color: "red"}}></p>
         <table>
           <tbody>
             {this.label(this.formatInfo(this.props.currLang))}
@@ -137,6 +128,7 @@ class ServicePage extends React.Component {
     );
   }
 }
+
 
 const mapStateToProps = state => {
   return {currLang: state.translate};

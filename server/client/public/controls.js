@@ -5,7 +5,7 @@ window.onload = function() { // waits for react to load up first before running 
   let autoPick = new google.maps.places.Autocomplete(pick);
   let autoDrop = new google.maps.places.Autocomplete(drop);
 
-  document.getElementById("infoForm").onkeypress = function(e) { // prevents user from submitting with enter key
+  $("#infoForm").onkeypress = function(e) { // prevents user from submitting with enter key
     var key = e.charCode || e.keyCode || 0;
     if (key == 13) {
       e.preventDefault();
@@ -15,6 +15,7 @@ window.onload = function() { // waits for react to load up first before running 
   // when user clicks on Review button, it should have the input in diff. color for them to review
   // then it should prevent them from entering values in this state
   $('#review-button').click(function(e) {
+    console.log($('input').attr('disabled'))
     if($('input').attr('disabled')) { // active when user presses edit
       $('input').removeAttr('disabled'); // removes disable to allow edits
       $('input[type=text]').css('border', "2px solid black");
@@ -28,8 +29,10 @@ window.onload = function() { // waits for react to load up first before running 
         $(this).css("border", "2px solid red");
         $('input').removeAttr('disabled'); // removes disable to allow edits
         $('#review-button').text("Review"); // indicates if they need to review info
+        $('#warning').text("* Please fill out all the boxes.")
       } else {
         $(this).css("border", "2px solid green");
+        $('#warning').empty();
       }
     })
   })

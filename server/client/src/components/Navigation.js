@@ -68,7 +68,7 @@ class Navigation extends React.Component {
             <Link className="tab-link" to="/#about"> {this.formatLanguage(this.props.currLang).about} </Link>
           </div>
           <div className="dropTab" onClick={this.clickMenuIcon}>
-            <Link className="tab-link" to='/service'> {this.formatLanguage(this.props.currLang).request} </Link>
+            <Link onClick={this.forceUpdate} className="tab-link" to='/service'> {this.formatLanguage(this.props.currLang).request} </Link>
           </div>
           <div className="dropTab" onClick={this.clickMenuIcon}>
             <Link className="tab-link" to="/#contact-us"> {this.formatLanguage(this.props.currLang).contact} </Link>
@@ -94,7 +94,7 @@ class Navigation extends React.Component {
             <div className="tab-container">
               <Link className="tab tab-link" to="/# "> {this.formatLanguage(this.props.currLang).home} </Link>
               <Link className="tab tab-link" to="/#about"> {this.formatLanguage(this.props.currLang).about} </Link>
-              <Link className="tab tab-link" to='/service'> {this.formatLanguage(this.props.currLang).request} </Link>
+              <Link onClick={this.forceUpdate} className="tab tab-link" to='/service'> {this.formatLanguage(this.props.currLang).request} </Link>
               <Link className="tab tab-link" to="/#contact-us"> {this.formatLanguage(this.props.currLang).contact} </Link>
               <div className="tab" onClick={this.translateSwitch(this.props.currLang)}> {this.formatLanguage(this.props.currLang).language} </div>
             </div>
