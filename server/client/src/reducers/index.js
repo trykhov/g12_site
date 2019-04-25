@@ -1,8 +1,7 @@
 import { combineReducers } from 'redux';
 
-const initialLanguage = {currLang: "english"};
 
-const language = (state = initialLanguage, action) => { //always initialize a state
+const language = (state = {currLang: "english"}, action) => { //always initialize a state
   switch(action.type) {
     case "TRANSLATE_ENGLISH":
       return action.payload;

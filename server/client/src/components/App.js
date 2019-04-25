@@ -6,19 +6,19 @@ import About from "./About";
 import Footer from "./Footer";
 import ServicePage from "./ServicePage";
 import Home from "./Home";
-
+import { connect } from 'react-redux';
 
 class App extends React.Component {
 
   render() {
     return (
       <BrowserRouter>
-        <Navigation />
-        <Route path="/" component={Home} exact />
-        <Route path="/service" render={() => <ServicePage />}/>
+        <Route exact path="/" component={Home} exact />
+        <Route exact path="/service" render={() => <ServicePage />}/>
       </BrowserRouter>
     );
   }
 }
+
 
 export default App;
