@@ -26,7 +26,7 @@ class Intro extends React.Component {
     return (
       <section>
         <div className="intro-container">
-          <div className="box">
+          <div style={{textAlign: "center"}} className="box">
             <h2>{this.formatLanguage(this.props.currLang).header}</h2>
             <p>
               {this.formatLanguage(this.props.currLang).desc}

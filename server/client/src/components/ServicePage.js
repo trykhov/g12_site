@@ -87,7 +87,15 @@ class ServicePage extends React.Component {
             <strong className="label">{list.email}</strong>
           </td>
           <td>
-            <input className="input-box" type="text" name="email" required />
+            <input
+              className="input-box"
+              type="text"
+              name="email"
+              pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+              placeholder="bob@website.com"
+              title="bob@website.com"
+              required
+            />
           </td>
         </tr>
         <tr key="phone">
@@ -99,6 +107,7 @@ class ServicePage extends React.Component {
               className="input-box"
               type="text"
               pattern="^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$"
+              placeholder="123-456-7890"
               title="123-456-7890 or 1234567890"
               name="phone"
               required

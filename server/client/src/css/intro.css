@@ -46,8 +46,11 @@ section {
 }
 
 .box h2, .box p {
-  margin: 10px;
   text-align: center;
+}
+
+.box p {
+  margin: 10px;
 }
 
 /****************************** Tab Action ************************************/

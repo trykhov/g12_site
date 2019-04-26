@@ -6,6 +6,7 @@ import About from "./About";
 import Footer from "./Footer";
 import ServicePage from "./ServicePage";
 import Home from "./Home";
+import Confirm from './Confirm';
 import { connect } from 'react-redux';
 
 class App extends React.Component {
@@ -14,7 +15,8 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <Route exact path="/" component={Home} exact />
-        <Route exact path="/service" render={() => <ServicePage />}/>
+        <Route path="/service" render={() => <ServicePage />}/>
+        <Route path="/confirm" component={Confirm} />
       </BrowserRouter>
     );
   }
