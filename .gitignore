@@ -26,4 +26,4 @@ sendgrid.env
 sendgrid.env
 sendgrid.env
 
-/server/auth.js
+auth.js
