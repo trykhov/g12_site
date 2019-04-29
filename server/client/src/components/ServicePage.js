@@ -9,11 +9,11 @@ class ServicePage extends React.Component {
     instructEn: {
       main:
         "To help us determine rates and how we may best serve you, please fill out this from.",
-      disclaimer: "We do not transport hazardous materials."
+      disclaimer: "* We do not transport hazardous materials."
     },
     instructSp: {
-      main: "",
-      disclaimer: ""
+      main: "Para ayudarnos a determinar las tarifas y cómo podemos servirle mejor, complete este formulario.",
+      disclaimer: "* No transportamos material peligroso."
     }
   };
 
@@ -26,17 +26,17 @@ class ServicePage extends React.Component {
       drop: "Drop Off To",
       weight: "Weight of Cargo (lb)",
       van: "Are there any fluids?",
-      price: "Cost of Assets (USD$)"
+      submit: "Submit"
     },
     labelsSp: {
       name: "Nombre",
-      email: "Electronico Correo",
-      phone: "Telefono",
-      pick: "Pick",
-      drop: "Drop",
-      weight: "Weightzzzz (lb)",
-      van: "Dryyyyy",
-      price: "Priceeee"
+      email: "Correo electrónico",
+      phone: "Número de teléfono",
+      pick: "Lugar de recogida",
+      drop: "Lugar de entrega",
+      weight: "Peso de la carga (lb)",
+      van: "¿Hay algún líquido?",
+      submit: "Enviar"
     }
   };
 
@@ -170,21 +170,6 @@ class ServicePage extends React.Component {
             </select>
           </td>
         </tr>
-        <tr key="price">
-          <td>
-            <strong className="label">{list.price}</strong>
-          </td>
-          <td>
-            <input
-              className="input-box"
-              type="text"
-              name="price"
-              pattern="^[0-9]+$"
-              title="Please give us a number"
-              required
-            />
-          </td>
-        </tr>
       </tbody>
     );
   }
@@ -218,7 +203,7 @@ class ServicePage extends React.Component {
             {this.generateForm(this.formatInfo(this.props.currLang))}
           </table>
           <button id="submit-button" type="submit">
-            Submit
+            {this.formatInfo(this.props.currLang).submit}
           </button>
         </form>
       </section>

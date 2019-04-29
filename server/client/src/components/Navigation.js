@@ -16,7 +16,7 @@ class Navigation extends React.Component {
       language: "Español"
     },
     sp: {
-      home: "Página de inicio",
+      home: "Página de Inicio",
       about: "Sobre G12 Transport",
       request: "Solicitar Servicios",
       contact: "Contáctenos",

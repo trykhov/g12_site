@@ -15,7 +15,7 @@ class Intro extends React.Component {
       }
       } else if(language == "spanish") {
         return {
-          header: "Es un negocio que requiere nuestro servicios?",
+          header: "Es un negocio?",
           desc: "G12 Transport trabaja localmente para transportar cargas en todo el estado de California. Si usted es una empresa que busca transportar su mercancía, haga clic aquí:",
           link: "Solicitar servicios"
         }
