@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "concurrently \"npm run g12_fullstack\" \"npm run client\"",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "dev": "concurrently \"npm run g12_fullstack\" \"npm run client\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "",

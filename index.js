@@ -30,4 +30,5 @@ app.post("/send_email", (req, res) => {
   res.redirect('/confirm');
 });
 
-app.listen(5000);
+const port = process.env.PORT || 80
+app.listen(port);
