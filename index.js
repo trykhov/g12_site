@@ -8,9 +8,14 @@ sgMail.setApiKey(keys.api);
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (req, res) => {
-  res.send("This is port 5000");
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'client','build')));
+
+app.get('/*', function(req, res) {
+  res.sendFile(path.join(__dirname,'client', 'build', 'index.html'));
 });
+
 
 
 app.post("/send_email", (req, res) => {
@@ -30,5 +35,13 @@ app.post("/send_email", (req, res) => {
   res.redirect('/confirm');
 });
 
-const port = process.env.PORT || 5000
-app.listen(port);
+if(process.env.TARGET === "now") {
+  module.exports = app;
+} else {
+  app.set("port", process.env.PORT || 5000);
+  app.listen(app.get("port"), () => console.log(`listening on port ${app.get("port")}`));
+}
+
+
+// const port = process.env.PORT || 5000
+// app.listen(port);
