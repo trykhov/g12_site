@@ -52,7 +52,7 @@ class Contact extends React.Component {
                     {this.formatLanguage(this.props.currLang).email}:
                   </td>
                   <td>
-                    g12transport1@gmail.com
+                    G-12transport1@gmail.com
                   </td>
                 </tr>
               </tbody>
@@ -97,7 +97,7 @@ class Contact extends React.Component {
 //       <i className="fas fa-fax" /> {this.formatLanguage(this.props.currLang).fax}:{" "}
 //     </span>
 //     <span>
-//       <i className="fas fa-envelope" /> {this.formatLanguage(this.props.currLang).email}: g12transport1@gmail.com
+//       <i className="fas fa-envelope" /> {this.formatLanguage(this.props.currLang).email}: G-12transport1@gmail.com
 //     </span>
 //   </div>
 // </div>

@@ -10,13 +10,13 @@ class Intro extends React.Component {
     if(language == "english") {
       return {
         header: "Are You a Business?",
-        desc: "G12 Transport works locally to transport loads throughout the state of California. If you are a company looking to have your merchandise transported, click here:",
+        desc: "G-12 Transport works locally to transport loads throughout the state of California. If you are a company looking to have your merchandise transported, click here:",
         link: "Request Service"
       }
       } else if(language == "spanish") {
         return {
           header: "Es un negocio?",
-          desc: "G12 Transport trabaja localmente para transportar cargas en todo el estado de California. Si usted es una empresa que busca transportar su mercancía, haga clic aquí:",
+          desc: "G-12 Transport trabaja localmente para transportar cargas en todo el estado de California. Si usted es una empresa que busca transportar su mercancía, haga clic aquí:",
           link: "Solicitar servicios"
         }
       }

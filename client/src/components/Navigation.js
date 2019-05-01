@@ -17,7 +17,7 @@ class Navigation extends React.Component {
     },
     sp: {
       home: "Página de Inicio",
-      about: "Sobre G12 Transport",
+      about: "Sobre G-12 Transport",
       request: "Solicitar Servicios",
       contact: "Contáctenos",
       language: "English"
@@ -99,7 +99,7 @@ class Navigation extends React.Component {
     return (
       <nav className="nav-bar">
         <div className="nav-container">
-          <div className="logo-container">G12 Logo</div>
+          <div className="logo-container">G-12 Logo</div>
           {/* the hamburger will disappear unless the screen is strunk*/}
           {
             <div onClick={this.clickMenuIcon} className="icon-container">

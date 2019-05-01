@@ -15,7 +15,7 @@ class Footer extends React.Component {
             fontFamily: "'Kanit', sans-serif"
           }}
         >
-          © 2019 G12 Transport. All Rights Reserved
+          © 2019 G-12 Transport. All Rights Reserved
         </div>
       </footer>
     );
