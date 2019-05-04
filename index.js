@@ -24,14 +24,14 @@ app.post("/send_email", (req, res) => {
                "\n Pick Up Location: " + req.body.pick + "\n Drop Off Location: " + req.body.drop + "\n Weight (lb): " +
                req.body.weight + "\n Any Fluids: " + req.body.van;
 
-  const msg = {
-    to: '',
-    from: '',
+  const msgToG12 = {
+    to: keys.to,
+    from: keys.from,
     subject: 'Requesting Service for ' + req.body.name ,
     text: text,
   };
 
-  sgMail.send(msg);
+  sgMail.send(msgToG12);
   res.redirect('/confirm');
 });
 
