@@ -36,7 +36,7 @@ class Contact extends React.Component {
                     {this.formatLanguage(this.props.currLang).phone}:
                   </td>
                   <td>
-                    (323)-507-2733
+                    (323)-507-2218
                   </td>
                 </tr>
                 <tr>
@@ -44,7 +44,7 @@ class Contact extends React.Component {
                     {this.formatLanguage(this.props.currLang).fax}:
                   </td>
                   <td>
-                    (323)-507-2218
+                    (323)-507-2733
                   </td>
                 </tr>
                 <tr>

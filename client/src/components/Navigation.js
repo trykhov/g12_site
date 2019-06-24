@@ -58,7 +58,7 @@ class Navigation extends React.Component {
       return (
         <div>
           <div className="dropTab" onClick={this.clickMenuIcon}>
-            <Link className="tab-link" to="/# ">
+            <Link className="tab-link" to="/" onClick={() => window.scrollTo(0,0)}>
               {" "}
               {this.formatLanguage(this.props.currLang).home}{" "}
             </Link>
@@ -101,13 +101,11 @@ class Navigation extends React.Component {
         <div className="nav-container">
           <div className="logo-container">G-12 Logo</div>
           {/* the hamburger will disappear unless the screen is strunk*/}
-          {
             <div onClick={this.clickMenuIcon} className="icon-container">
               {this.state.menuIcon}
             </div>
-          }
-          <div className="tab-container">
-            <Link className="tab tab-link" to="/# ">
+          <div onClick={() => window.scrollTo(0,0)} className="tab-container">
+            <Link className="tab tab-link" to="/">
               {" "}
               {this.formatLanguage(this.props.currLang).home}{" "}
             </Link>
