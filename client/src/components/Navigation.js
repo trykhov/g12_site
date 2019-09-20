@@ -4,6 +4,7 @@ import navigation from "../css/navigation.css";
 import ServicePage from "./ServicePage";
 import { connect } from "react-redux";
 import { translateEnglish, translateSpanish } from "../actions";
+import company_logo from '../img/company_name.jpg';
 
 class Navigation extends React.Component {
   // can have local states along with central states
@@ -99,7 +100,7 @@ class Navigation extends React.Component {
     return (
       <nav className="nav-bar">
         <div className="nav-container">
-          <div className="logo-container">G-12 Logo</div>
+          <img className="logo-container" src={company_logo} alt="logo"/>
           {/* the hamburger will disappear unless the screen is strunk*/}
             <div onClick={this.clickMenuIcon} className="icon-container">
               {this.state.menuIcon}

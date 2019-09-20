@@ -1,10 +1,10 @@
 import React from "react";
-import contact from "../css/contact.css";
+import "../css/contact.css";
 import { connect } from 'react-redux';
 
 class Contact extends React.Component {
   formatLanguage(language) {
-    if(language == "english") {
+    if(language === "english") {
       return {
         contact: "Contact Us",
         phone: "Phone Number",
@@ -12,7 +12,7 @@ class Contact extends React.Component {
         fax: "Fax Number",
         email: "Email"
         }
-      } else if(language == "spanish") {
+      } else if(language === "spanish") {
         return {
           contact: "Contáctenos",
           phone: "Número de teléfono",
@@ -73,7 +73,6 @@ class Contact extends React.Component {
             </table>
           </div>*/}
         </div>
-
       </section>
     );
   }

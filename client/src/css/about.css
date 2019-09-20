@@ -1,7 +1,7 @@
 
 
 #about {
-  background-color: #10316b;
+  background-color: #8f1d14;
   color: #fff;
   font-family: 'Kanit', sans-serif;
   overflow: auto;
@@ -16,7 +16,7 @@
 
 .about-us, .quote, #author {
   width: 80%;
-  margin: 20px auto;
+  margin: 0 auto 20px;
 }
 
 #author span {

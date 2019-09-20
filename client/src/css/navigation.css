@@ -6,36 +6,32 @@
 
 .nav-bar {
   width: 100%;
-  background-color: #10316b;
-  position: fixed;
-  z-index: 1;
+  background-color: black;
 }
 
 .nav-container {
-  width: 80%;
+  width: 90%;
   color: white;
   overflow: auto;
   margin: 0 auto;
 }
 
-
 .logo-container {
   float: left;
-  font-family: 'Kanit', sans-serif;
-  font-size: 20px;
-  padding: 20px;
+  overflow: auto;
+  height: 70px;
+  width: 270px;
 }
-
 
 .tab-container {
   float: right;
-  padding: 20px;
+  padding: 20px 0;
 }
 
 .tab {
   float: left;
   font-family: 'Kanit', sans-serif;
-  font-size: 20px;
+  font-size: 21px;
   margin-right: 30px;
 }
 
@@ -71,7 +67,7 @@
 /****************************** Tab Action ************************************/
 
 .tab-link:hover, .dropTab:hover, .tab:hover {
-  color: green;
+  color: #5e6073;
   cursor: pointer;
 }
 
@@ -99,5 +95,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+  .logo-container {
+    width: 240px;
   }
 }
